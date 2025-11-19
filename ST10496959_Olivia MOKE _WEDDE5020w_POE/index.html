@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hope for Tomorrow Foundation - Home</title>
+  <meta name="description" content="Hope for Tomorrow Foundation - supporting education, food security and community development locally." />
+  <meta name="keywords" content="charity, education, food drive, community, volunteer, Johannesburg" />
   <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <meta name="robots" content="index,follow" />
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <h1>Hope for Tomorrow Foundation</h1>
   </header>
 
   <!-- Navigation -->
-  <nav>
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <nav class="navbar" role="navigation" aria-label="Main menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Hero Banner -->
-  <div class="hero">
+  <!-- Hero -->
+  <div class="hero" id="hero">
     <h2>Building Hope, Changing Lives</h2>
-    <p>Together, we can make a difference in our community.</p>
-    <a href="about.html" class="btn">Learn More</a>
+    <p>Together we can make a difference in our local community.</p>
+    <a class="btn" href="#posts">See Stories</a>
   </div>
 
-  <!-- Section -->
-  <section>
-    <h2>Welcome to Our Foundation</h2>
-    <article>
-      <p>We are committed to uplifting our community through education, food programs, and healthcare support.</p>
-    </article>
-    <aside>
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="contact.html">Get in Touch</a></li>
-      </ul>
-    </aside>
+  <!-- Section: dynamic posts (loaded by JS) -->
+  <section id="posts">
+    <h2>Latest Stories</h2>
+    <div id="posts-controls" class="controls">
+      <input id="post-search" type="search" placeholder="Search stories..." aria-label="Search stories">
+      <select id="post-sort" aria-label="Sort posts">
+        <option value="date-desc">Newest</option>
+        <option value="date-asc">Oldest</option>
+        <option value="title-asc">Title A–Z</option>
+        <option value="title-desc">Title Z–A</option>
+      </select>
+    </div>
+    <div id="posts-list" class="services-grid" aria-live="polite">
+      <!-- JS inserts posts here -->
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Hope for Tomorrow Foundation | All Rights Reserved</p>
-  </footer>
+  <!-- Section: Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- sample thumbnails -->
+      <img src="images/gallery1.jpg" alt="Children learning" class="thumb" data-full="images/gallery1-large.jpg">
+      <img src="images/gallery2.jpg" alt="Volunteers distributing food" class="thumb" data-full="images/gallery2-large.jpg">
+      <img src="images/gallery3.jpg" alt="Skills workshop" class="thumb" data-full="images/gallery3-large.jpg">
+    </div>
+  </section>
 
+  <!-- Modal / Lightbox for gallery -->
+  <div id="lightbox" class="modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button id="lightbox-close" class="modal-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <div class="modal-controls">
+      <button id="prev-img" aria-label="Previous image">&larr;</button>
+      <button id="next-img" aria-label="Next image">&rarr;</button>
+    </div>
+  </div>
+
+  <!-- Section: Map -->
+  <section id="map-section">
+    <h2>Where we work</h2>
+    <div id="map" style="height:320px; border-radius:8px;"></div>
+  </section>
+
+  <!-- Back to top -->
+  <button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+
+  <footer>
+    <p>&copy; 2025 Hope for Tomorrow Foundation | <a href="sitemap.xml">Sitemap</a></p>
+  </footer>
 </body>
 </html>
