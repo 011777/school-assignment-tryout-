@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services - Hope for Tomorrow Foundation</title>
+  <meta name="description" content="Services: Education, Food Security, Skills Training and Community Health." />
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
-  <header>
-    <h1>Our Services</h1>
-  </header>
-
-  <nav>
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <header><h1>Our Services</h1></header>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section>
-    <div class="services-grid">
-      <div class="service-box">
-        <h2>Education Programs</h2>
-        <p>We provide after-school tutoring and scholarships for underprivileged children.</p>
+    <h2>What we do</h2>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Service categories">
+      <button class="tab active" data-tab="education" role="tab" aria-selected="true">Education</button>
+      <button class="tab" data-tab="food" role="tab">Food</button>
+      <button class="tab" data-tab="skills" role="tab">Skills</button>
+      <button class="tab" data-tab="health" role="tab">Health</button>
+    </div>
+
+    <!-- Tab panels -->
+    <div class="tab-panels">
+      <div class="tab-panel" id="education" role="tabpanel">
+        <h3>Education Support</h3>
+        <p>After-school tutoring, school supplies and scholarships.</p>
       </div>
-      <div class="service-box">
-        <h2>Food Security</h2>
-        <p>Weekly food parcels and community gardens ensure no family goes hungry.</p>
+      <div class="tab-panel" id="food" role="tabpanel" hidden>
+        <h3>Food Drives</h3>
+        <p>Monthly food parcels, community kitchen, and gardens.</p>
       </div>
-      <div class="service-box">
-        <h2>Healthcare Support</h2>
-        <p>We partner with clinics to offer free check-ups and health workshops.</p>
+      <div class="tab-panel" id="skills" role="tabpanel" hidden>
+        <h3>Skills Training</h3>
+        <p>Vocational training, digital literacy and job placement assistance.</p>
+      </div>
+      <div class="tab-panel" id="health" role="tabpanel" hidden>
+        <h3>Healthcare Support</h3>
+        <p>Partner clinics offer free check-ups and health workshops.</p>
       </div>
     </div>
+
+    <!-- service card generate -->
+    <div id="services-list" class="services-grid" aria-live="polite"></div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Hope for Tomorrow Foundation | All Rights Reserved</p>
+    <p>&copy; 2025 Hope for Tomorrow Foundation</p>
   </footer>
-
 </body>
 </html>
