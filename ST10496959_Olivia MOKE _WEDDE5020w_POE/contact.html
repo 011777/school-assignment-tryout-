@@ -1,55 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Hope for Tomorrow Foundation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Hope for Tomorrow Foundation</title>
+  <meta name="description" content="Contact the Hope for Tomorrow Foundation." />
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
-  <header>
-    <h1>Contact Us</h1>
-  </header>
-
-  <nav>
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <header><h1>Contact Us</h1></header>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section>
+    <h2>Send a message</h2>
     <div class="contact-container">
       <div class="contact-form">
-        <h2>Send us a message</h2>
-        <form>
-          <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name" required><br><br>
+        <form id="contact-form" novalidate>
+          <label for="c-name">Name</label>
+          <input id="c-name" name="name" type="text" required minlength="2">
 
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" required><br><br>
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" required>
 
-          <label for="message">Message:</label><br>
-          <textarea id="message" name="message" rows="5" required></textarea><br><br>
+          <label for="c-type">Message Type</label>
+          <select id="c-type" name="type" required>
+            <option value="">Select...</option>
+            <option value="general">General</option>
+            <option value="donation">Donation</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="partnership">Partnership</option>
+          </select>
 
-          <button type="submit">Submit</button>
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" rows="5" required minlength="10"></textarea>
+
+          <button type="submit">Send Message</button>
         </form>
+
+        <div id="contact-feedback" class="feedback" aria-live="polite"></div>
       </div>
+
       <div class="contact-info">
-        <h2>Our Details</h2>
-        <p><strong>Email:</strong> info@hopefoundation.org</p>
-        <p><strong>Phone:</strong> +27 123 456 7890</p>
-        <p><strong>Address:</strong> 123 Hope Street, Cape Town, South Africa</p>
+        <h3>Our details</h3>
+        <p><strong>Email:</strong> info@hopefortomorrow.org</p>
+        <p><strong>Phone:</strong> +27 123 456 789</p>
+        <p><strong>Address:</strong> 123 Community Street, Johannesburg</p>
+        <h4>Opening hours</h4>
+        <p>Mon–Fri 9:00–16:00</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Hope for Tomorrow Foundation | All Rights Reserved</p>
+    <p>&copy; 2025 Hope for Tomorrow Foundation</p>
   </footer>
-
 </body>
 </html>
